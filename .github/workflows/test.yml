@@ -22,4 +22,4 @@ jobs:
       - name: Php cs fixer
         run: ./vendor/bin/php-cs-fixer fix .
       - name: Run tests
-        run: ./vendor/bin/phpunit
+        run: ./vendor/bin/phpunit .
