@@ -3,7 +3,7 @@
   "description": "A php library for phpunit to test the performance of php applications",
   "type": "library",
   "require": {
-    "php": "^7.3 || 8.0",
+    "php": "^7.3 || 8.0.*",
     "phpunit/phpunit": "^9.5.25",
     "symfony/stopwatch": "^v5.4.13"
   },
