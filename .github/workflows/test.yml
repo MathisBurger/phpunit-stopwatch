@@ -1,0 +1,25 @@
+name: Test
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        uses: php-actions/composer@v7
+        with:
+          dev: true
+          args: --profile --ignore-platform-reqs
+      - name: Php cs fixer
+        run: ./vendor/bin/php-cs-fixer fix .
+      - name: Run tests
+        run: ./vendor/bin/phpunit

@@ -18,7 +18,6 @@ use PHPUnit\Framework\TestCase;
  */
 abstract class StopwatchTestCase extends TestCase
 {
-
     // Implements functionality
     use StopwatchTrait;
 }

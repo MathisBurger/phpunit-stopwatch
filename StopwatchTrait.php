@@ -20,7 +20,6 @@ use Symfony\Component\Stopwatch\Stopwatch;
  */
 trait StopwatchTrait
 {
-
     /** @var Stopwatch|null Test case specific stopwatch instance */
     private ?Stopwatch $stopwatch = null;
 
@@ -57,10 +56,9 @@ trait StopwatchTrait
      * @param float $ms The expected execution time in milliseconds
      * @return void
      */
-    protected function executionTimeBelow(float $ms): void
+    protected function assertExecutionTimeBelow(float $ms): void
     {
         $executionTime = $this->stopwatch->getEvent('test')->getDuration();
         $this->assertTrue($executionTime < $ms, 'Failed asserting that execution time is below ' . $ms . 'ms');
     }
-
 }
